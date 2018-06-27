@@ -10,11 +10,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use(express.static("build"));
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
+app.get("/ping", (req, res) => {
+  res.send("pong");
 });
+
+//app.use(express.static("build"));
 
 app.listen(PORT, () => {
   console.log("server is listening on http://localhost:" + PORT);
